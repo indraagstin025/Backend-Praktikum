@@ -13,7 +13,19 @@ func Homepage(c *fiber.Ctx) error {
 	return c.SendString("Welcome to the homepage!")
 }
 
-// GetAllMahasiswa handler
+
+
+
+// GetAllMahasiswa godoc
+// @Summary Get All Data Mahasiswa.
+// @Description Mengambil semua data mahasiswa.
+// @Tags Mahasiswa
+// @Accept json
+// @Produce json
+// @Success 200 {object} model.Mahasiswa
+// @Failure 401 "Unauthorized"
+// @Failure 500
+// @Router /api/mahasiswa [get]
 func GetAllMahasiswa(c *fiber.Ctx) error {
 	data, err := repository.GetAllMahasiswa(c.Context())
 	if err != nil {

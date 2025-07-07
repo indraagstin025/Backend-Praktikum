@@ -4,10 +4,12 @@ import (
 	"inibackend/handler"
 	"github.com/gofiber/fiber/v2"
 	"inibackend/config/middleware"
+	"github.com/gofiber/swagger"
 )
 
 func SetupRoutes(app *fiber.App) {
 	api := app.Group("/api")
+	app.Get("/docs/*", swagger.HandlerDefault)
 	api.Get("/mahasiswa", handler.GetAllMahasiswa)
 
 	api.Get("/", handler.Homepage)

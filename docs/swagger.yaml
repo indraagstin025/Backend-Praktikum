@@ -1,0 +1,81 @@
+basePath: /
+definitions:
+  model.Alamat:
+    properties:
+      jalan:
+        type: string
+      kelurahan:
+        type: string
+      kota:
+        type: string
+    type: object
+  model.Mahasiswa:
+    properties:
+      _id:
+        type: string
+      alamat:
+        $ref: '#/definitions/model.Alamat'
+      fakultas:
+        type: string
+      mata_kuliah:
+        items:
+          $ref: '#/definitions/model.MataKuliah'
+        type: array
+      minat:
+        items:
+          type: string
+        type: array
+      nama:
+        type: string
+      npm:
+        type: integer
+      prodi:
+        type: string
+    type: object
+  model.MataKuliah:
+    properties:
+      kode:
+        type: string
+      nama:
+        type: string
+      nilai:
+        type: integer
+    type: object
+host: localhost:3000
+info:
+  contact:
+    email: indraagustin012@gmail.com
+    name: API Support
+    url: https://github.com/indraagstin025
+  description: This is a sample swagger for Fiber
+  title: TES SWAGGER PEMROGRAMAN III
+  version: "1.0"
+paths:
+  /api/mahasiswa:
+    get:
+      consumes:
+      - application/json
+      description: Mengambil semua data mahasiswa.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Mahasiswa'
+        "401":
+          description: Unauthorized
+        "500":
+          description: Internal Server Error
+      summary: Get All Data Mahasiswa.
+      tags:
+      - Mahasiswa
+schemes:
+- http
+- https
+securityDefinitions:
+  BearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

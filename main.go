@@ -14,6 +14,7 @@ import (
 	"github.com/joho/godotenv"
 
 	"aidanwoods.dev/go-paseto"
+	_ "inibackend/docs"
 
 
 )
@@ -40,11 +41,16 @@ func init() {
 // @version 1.0
 // @description This is a sample swagger for Fiber
 
-// @contact.name API Support
-// @contact.url https://github.com/HisyamSamAm
-// @contact.email mhisyamnajwan@gmail.com
+// @title TES SWAGGER PEMROGRAMAN III
+// @version 1.0
+// @description This is a sample swagger for Fiber
 
-// @host localhost:8088
+// @contact.name API Support
+// @contact.url https://github.com/indraagstin025
+// @contact.email indraagustin012@gmail.com
+
+
+// @host localhost:3000
 // @BasePath /
 // @schemes http https
 // @securityDefinitions.apikey BearerAuth
